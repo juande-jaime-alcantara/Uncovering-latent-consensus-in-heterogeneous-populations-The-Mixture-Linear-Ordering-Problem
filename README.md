@@ -9,14 +9,6 @@
 
 <hr>
 
-<h2>Summary</h2>
-
-<p>
-Supplementary dataset for the article on the Mixture Linear Ordering Problem. This repository contains the synthetic <code>.dat</code> instances used in the computational experiments, including instances <code>R1, R2, \ldots, R36</code> and the sushi instance, in order to ensure transparency and reproducibility. It also includes the corresponding optimization models implemented for the study, namely the compact exact model and the heuristic model, together with the outputs generated in the experiments.
-</p>
-
-<hr>
-
 <h2>📁 Repository structure</h2>
 
 <pre><code>inputs/
