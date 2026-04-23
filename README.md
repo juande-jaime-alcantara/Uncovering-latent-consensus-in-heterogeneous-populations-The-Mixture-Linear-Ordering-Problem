@@ -38,14 +38,26 @@ README.md
 
 <h2>📄 Format of the <code>.dat</code> files</h2>
 
-<p>Each instance is provided in <code>.dat</code> format and contains the input data required to run the corresponding Mosel models.</p>
+<p>Each instance is provided in plain text format and contains:</p>
 
 <ul>
-  <li><code>R1, R2, ..., R36</code>: synthetic instances used in the computational experiments</li>
-  <li><code>sushi</code>: benchmark instance included in the study</li>
+  <li><code>n</code>: number of items</li>
+  <li><code>m</code>: number of voters</li>
+  <li><code>c</code>: an <code>n × n</code> matrix with aggregated preference intensities</li>
 </ul>
 
-<p>These files are directly readable by the models contained in <code>models/</code>.</p>
+<p>The general structure is:</p>
+
+<pre><code>n: &lt;number_of_items&gt;
+m: &lt;number_of_voters&gt;
+c:
+[
+  &lt;row_1&gt;
+  &lt;row_2&gt;
+  ...
+  &lt;row_n&gt;
+]
+</code></pre>
 
 <hr>
 
