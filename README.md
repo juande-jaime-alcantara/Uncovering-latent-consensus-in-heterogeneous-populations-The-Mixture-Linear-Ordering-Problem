@@ -38,24 +38,18 @@ README.md
 
 <h2>📄 Format of the <code>.dat</code> files</h2>
 
-<p>The folder <code>inputs/</code> contains two types of instances in <code>.dat</code> format: synthetic instances and the sushi instance.</p>
-
-<h3>Synthetic instances</h3>
-
-<p>Each synthetic instance is provided in plain text format and contains:</p>
+<p>Each instance is provided in plain text format and contains:</p>
 
 <ul>
   <li><code>n</code>: number of items</li>
-  <li><code>g</code>: number of groups used to generate the instance</li>
-  <li><code>nswaps</code>: maximum Kendall distance used as noise in the generation process</li>
+  <li>For synthetic instances, <code>g</code>: number of groups used to generate the instance</li>
+  <li>For synthetic instances, <code>nswaps</code>: maximum Kendall distance used as noise in the generation process</li>
   <li><code>a</code>: an <code>n × n</code> matrix associated with the instance</li>
 </ul>
 
 <p>The general structure is:</p>
 
 <pre><code>n: &lt;number_of_items&gt;
-g: &lt;number_of_groups&gt;
-nswaps: &lt;maximum_kendall_distance&gt;
 a:
 [
   &lt;row_1&gt;
@@ -65,28 +59,17 @@ a:
 ]
 </code></pre>
 
-<h3>Sushi instance</h3>
+<p>For synthetic instances, the following additional parameters are also included:</p>
 
-<p>The sushi instance is also provided in plain text format and contains:</p>
-
-<ul>
-  <li><code>n</code>: number of items</li>
-  <li><code>m</code>: number of voters</li>
-  <li><code>c</code>: an <code>n × n</code> matrix with aggregated preference intensities</li>
-</ul>
-
-<p>The general structure is:</p>
-
-<pre><code>n: &lt;number_of_items&gt;
-m: &lt;number_of_voters&gt;
-c:
-[
-  &lt;row_1&gt;
-  &lt;row_2&gt;
-  ...
-  &lt;row_n&gt;
-]
+<pre><code>g: &lt;number_of_groups&gt;
+nswaps: &lt;maximum_kendall_distance&gt;
 </code></pre>
+
+<p>In the preprocessing step, the matrix <code>c</code> is computed from <code>a</code> as</p>
+
+<pre><code>c_rs = a_rs / (a_rs + a_sr)</code></pre>
+
+<p>for every pair of items <code>r,s</code>.</p>
 
 <hr>
 
