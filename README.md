@@ -125,7 +125,7 @@ To run an instance:
 
 <p>If you use this material, please cite:</p>
 
-<pre><code>@article{aledo2026latent,
+<pre><code>@article{aledo2026uncovering,
   title   = {Uncovering latent consensus in heterogeneous populations: The Mixture Linear Ordering Problem},
   author  = {Aledo, Juan A and Dom{\'i}nguez, Concepci{\'o}n and Jaime-Alc{\'a}ntara, Juan de Dios and Landete, Mercedes},
   journal = {Preprint},
