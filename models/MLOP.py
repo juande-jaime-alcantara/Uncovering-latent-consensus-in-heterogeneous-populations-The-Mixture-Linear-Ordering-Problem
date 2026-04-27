@@ -390,14 +390,14 @@ def solve_mlop(datafile: Path, outfile: Path, summaryfile: Path, g: int,
         # Decision Variables
         # --------------------------------------------------------
         
-        # x_{rsi}: 1 if item r precedes item s in group i. (Defined only for r < s)
+        # x_{rs}^i: 1 if item r precedes item s in group i. (Defined only for r < s)
         x = {(r, s, i): model.addVar(vtype=GRB.BINARY, name=f"x_{r}_{s}_{i}")
              for r in items for s in items for i in groups if r < s}
 
         # w_{i}: Continuous weight assigned to group i.
         w = {i: model.addVar(lb=0, ub=1, name=f"w_{i}") for i in groups}
 
-        # u_{rsi}: Continuous linearization variable representing w_i * x_{rsi}
+        # u_{rs}^i: Continuous linearization variable representing w_i * x_{rs}^i
         u = {(r, s, i): model.addVar(lb=0, ub=1, name=f"u_{r}_{s}_{i}")
              for r in items for s in items for i in groups if r < s}
 
@@ -438,7 +438,7 @@ def solve_mlop(datafile: Path, outfile: Path, summaryfile: Path, g: int,
         for i in range(1, g):
             model.addConstr(w[i] >= w[i + 1])  # Order groups by weight to break symmetry
 
-        # 3. McCormick Envelope Linearization: u_{rsi} = w_i * x_{rsi}
+        # 3. McCormick Envelope Linearization: u_{rs}^i = w_i * x_{rs}^i
         # Since x is binary, this exact linearization requires 3 constraints.
         for i in groups:
             for r in items:
@@ -448,7 +448,7 @@ def solve_mlop(datafile: Path, outfile: Path, summaryfile: Path, g: int,
                         model.addConstr(u[(r, s, i)] <= x[(r, s, i)])
                         model.addConstr(u[(r, s, i)] >= w[i] + x[(r, s, i)] - 1)
 
-        # 4. Absolute value constraints for v_{rs} = | c_{rs} - sum_i u_{rsi} |
+        # 4. Absolute value constraints for v_{rs} = | c_{rs} - sum_i u_{rs}^i |
         for r in items:
             for s in items:
                 if r < s:
