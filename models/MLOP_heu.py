@@ -524,7 +524,7 @@ def write_solution_like_example(outfile: Path, datafile: Path,
 # ============================================================
 # MULTI-START HEURISTIC PIPELINE
 # ============================================================
-def solve_hlop_heuristic_multistart(datafile: Path, outfile: Path, summaryfile: Path, g: int,
+def solve_mlop_heuristic_multistart(datafile: Path, outfile: Path, summaryfile: Path, g: int,
                                     restarts: int,
                                     it_tot: int,
                                     time_limit_total: float,
@@ -718,7 +718,7 @@ def main():
     if not datafile.exists():
         raise FileNotFoundError(f"Cannot find the .dat at: {datafile.resolve()}")
 
-    solve_hlop_heuristic_multistart(
+    solve_mlop_heuristic_multistart(
         datafile=datafile,
         outfile=Path(args.outfile),
         summaryfile=Path(args.summaryfile),

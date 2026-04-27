@@ -347,10 +347,10 @@ def make_wls_env(max_retries: int = 3) -> gp.Env:
 # Core MIP Solver
 # ============================================================
 
-def solve_hlop(datafile: Path, outfile: Path, summaryfile: Path, g: int,
+def solve_mlop(datafile: Path, outfile: Path, summaryfile: Path, g: int,
                time_limit: Optional[float], verbose: int) -> None:
     """
-    Formulates and solves the Mixed-Integer Programming model for the HLOP.
+    Formulates and solves the Mixed-Integer Programming model for the MLOP.
     """
     n, nswaps, a = load_instance(datafile)
 
@@ -371,7 +371,7 @@ def solve_hlop(datafile: Path, outfile: Path, summaryfile: Path, g: int,
     model: gp.Model | None = None
 
     try:
-        model = gp.Model("HLOP", env=env)
+        model = gp.Model("MLOP", env=env)
 
         # Solver parameters
         model.setParam("MIPGap", 1e-5)
@@ -497,7 +497,7 @@ def main():
     """
     Parses command-line arguments and triggers the optimization pipeline.
     """
-    parser = argparse.ArgumentParser(description="Solve the HLOP optimization model via Gurobi.")
+    parser = argparse.ArgumentParser(description="Solve the MLOP optimization model via Gurobi.")
 
     parser.add_argument("datafile", nargs="?", default=str(DEFAULT_DATAFILE), help="Path to the instance .dat file")
     parser.add_argument("--g", type=int, default=DEFAULT_NUM_GRUPOS, help="Number of groups (default: 4)")
