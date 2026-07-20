@@ -12,7 +12,6 @@
   </a>
 </p>
 
-
 <p>This repository provides the supplementary material for the article:</p>
 
 <p><strong><em>“Uncovering latent consensus in heterogeneous populations: The Mixture Linear Ordering Problem”</em></strong></p>
