@@ -33,13 +33,13 @@ DEFAULT_SUMMARYFILE = BASE_DIR / "../outputs/summaryMLOP_heu.txt"
 DEFAULT_NUM_GRUPOS = 2
 
 # Maximum global runtime in seconds for the entire multi-start heuristic.
-DEFAULT_TIME_LIMIT = 20000.00
+DEFAULT_TIME_LIMIT = 14400.00
 
 # Maximum number of Alternating Minimization iterations per run.
-DEFAULT_IT_TOT = 12
+DEFAULT_IT_TOT = 6
 
 # Number of multi-start runs (different initial random weights/permutations).
-DEFAULT_RESTARTS = 20
+DEFAULT_RESTARTS = 10
 
 # Random seed for reproducibility of initial starting points.
 DEFAULT_SEED = 123
