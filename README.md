@@ -152,16 +152,17 @@ The script generates the corresponding <code>.dat</code> instance files and the 
 <h2>▶️ Using the optimization models</h2>
 
 <p>
-The Mosel files in <code>models/</code> correspond directly to the formulations and algorithms described in the article.
+The Python files in <code>models/</code> implement the formulations and algorithms described in the article.
 To solve an instance:
 </p>
 
 <ol>
-  <li>Open one of the <code>.mos</code> files in Xpress.</li>
-  <li>Provide a <code>.dat</code> file from <code>inputs/</code>.</li>
-  <li>Execute the model to obtain the corresponding solution and objective value.</li>
+  <li>Select the corresponding Python model file from <code>models/</code>.</li>
+  <li>Specify a <code>.dat</code> file from <code>inputs/</code> as the input instance.</li>
+  <li>Run the Python script to obtain the corresponding solution and objective value.</li>
   <li>Inspect the generated files in <code>outputs/</code> and, when applicable, the additional information in <code>info_synthetic/</code>.</li>
 </ol>
+
 
 <p>The meaning and purpose of each formulation and algorithm are described in detail in the article.</p>
 
