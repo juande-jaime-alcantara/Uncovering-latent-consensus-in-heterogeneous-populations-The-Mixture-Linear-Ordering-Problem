@@ -6,7 +6,6 @@
 
 <h1>Uncovering latent consensus in heterogeneous populations: The Mixture Linear Ordering Problem — Supporting Material</h1>
 
-[![DOI](https://zenodo.org/badge/1219028340.svg)](https://doi.org/10.5281/zenodo.19709333)
 <p>
   <a href="https://doi.org/10.5281/zenodo.19709333">
     <img src="https://zenodo.org/badge/1219028340.svg" alt="DOI">
