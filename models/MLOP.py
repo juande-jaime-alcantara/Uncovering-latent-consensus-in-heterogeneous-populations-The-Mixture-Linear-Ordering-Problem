@@ -43,8 +43,8 @@ DEFAULT_SUMMARYFILE = BASE_DIR / "../outputs/summaryMLOP.txt"
 # Default number of heterogeneous groups (g) to partition the population into.
 DEFAULT_NUM_GRUPOS = 2
 
-# Maximum Gurobi solver runtime in seconds (14400s = 4 hours).
-DEFAULT_TIME_LIMIT = 14400
+# Maximum Gurobi solver runtime in seconds (7200s = 2 hours).
+DEFAULT_TIME_LIMIT = 7200
 
 # --- Output Formatting ---
 
