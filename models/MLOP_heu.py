@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+"""
+Mixture Linear Ordering Problem (MLOP) Matheuristic.
+
+This script uses Gurobi to solve the MLOP by parsing a custom `.dat` instance,
+applying a multi-start alternating-optimization matheuristic that successively
+solves a ranking-update MILP and a weight-update LP, and outputting both a
+detailed solution report and a summary of the execution.
+"""
+
 import re
 import os
 import time
